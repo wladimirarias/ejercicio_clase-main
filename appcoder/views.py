@@ -45,20 +45,18 @@ def creacion_profesores(request):
         
         return render(request, "appcoder/index.html")
     
-    else:
-        formulario = ProfesorFormulario()
-
+    formulario = ProfesorFormulario()
     contexto = {"formulario":formulario}
-
     return render(request, "appcoder/profesores_formularios.html", contexto)
 
 def buscar_curso(request):
     return render(request, "appcoder/busqueda_cursos.html")
 
 def resultados_busqueda_cursos(request):
+    nombre_curso =  request.GET['nombre_curso']
 
-    return render(request, "appcoder/resultados_busquedas_cursos.html")
-    pass
+    cursos = Curso.objects.filter(nombre__icontains=nombre_curso)
+    return render(request, "appcoder/resultados_busquedas_cursos.html", {"cursos": cursos})
 
 def entregables(request):
     return render(request, "appcoder/entregables.html")

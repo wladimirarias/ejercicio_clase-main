@@ -1,12 +1,8 @@
-{% extends 'appcoder/base.html' %}
+{% extends 'appcoder/base.html' %} {% block contenido %}
 
+<form action="{% url 'coder-cursos-buscar-resultados' %}" method="get">
 
-{% block contenido %}
-
-<form action="" method="get">
-
-    <p>
-        Nombre del curso: <input type="text" name="nombre_curso">
+    <p>Nombre del curso: <input type="text" name="nombre_curso">
         <input type="submit" value="Buscar!">
     </p>
 

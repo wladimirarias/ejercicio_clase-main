@@ -1,13 +1,19 @@
-{% extends 'appcoder/base.html' %}
+{% extends 'appcoder/base.html' %} {% block contenido %} {% if formulario.errors %}
 
-{% block contenido %}
+<p style="color: red;">Datos mal ingresados</p>
+
+{% endif %}
 
 <form action="" method="post">
     {% csrf_token %}
+    <table>
 
-    {{ formulario.as_p }}
+        {{ formulario.as_p }}
+
+    </table>
 
     <input type="submit" value="Cargar profesor">
+
 </form>
 
 {% endblock %}
