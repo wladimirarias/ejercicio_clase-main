@@ -4,6 +4,7 @@ from appcoder.models import Profesor
 from django.shortcuts import render
 from appcoder.forms import ProfesorFormulario
 
+# Create your views here.
 
 def inicio(request):
     return render (request, "appcoder/index.html")
